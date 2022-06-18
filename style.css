@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  --blue: rgb(86, 67, 193);
+  --blue-hover: rgb(111, 92, 218);
+  --blueLight: rgb(24, 144, 255);
+  --blueLight-shadow: rgba(5, 92, 173, 0.4);
+
+  --white: rgb(255, 255, 255);
+  --gray-light: rgb(139, 151, 167);
+  --gray-lighter: rgb(167, 172, 179);
+  --gray-dark: rgb(51, 61, 77);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+header {
+  color: var(--gray-light);
+  position: relative;
+  font-size: 1.6rem;
+  background: url("./login-background-2.9efad942.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.img-logo {
+  margin: auto;
+  position: relative;
+  top: 3.2rem;
+  display: block;
+  background-color: #ffffff;
+  border-radius: 50%;
+  height: 9rem;
+  box-shadow: 0px 0px 18px 14px var(--blueLight-shadow);
+}
+
+.cheems-box {
+  display: block;
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+  animation: cheemsEntrance 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) 0.45s;
+}
+
+.cheems-message {
+  z-index: 3;
+  position: absolute;
+  top: -9.2rem;
+  left: 13rem;
+  color: var(--gray-dark);
+  width: 14rem;
+  font-weight: 700;
+  line-height: 2rem;
+  animation: fadeIn 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.bubble-box {
+  transition: all 0.5s linear;
+}
+
+.bubble {
+  position: absolute;
+  top: -12rem;
+  left: 10rem;
+  width: 18rem;
+  height: 13rem;
+}
+
+.cheems {
+  width: 30rem;
+}
+
+form {
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 2rem;
+  width: 34rem;
+  background-color: var(--white);
+  padding: 4.2rem 3.6rem;
+  box-shadow: 0px 0px 18px 14px var(--blueLight-shadow);
+  animation: formEntrance 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+}
+
+input {
+  font-size: 1.5rem;
+  width: 100%;
+  border: 1px solid var(--gray-light);
+  padding: 1rem;
+  border-radius: 0.8rem;
+  display: block;
+  color: var(--gray-dark);
+}
+
+input::placeholder {
+  color: var(--gray-lighter);
+  font-size: inherit;
+}
+
+button[type="submit"]:focus,
+input:focus {
+  box-shadow: 0px 0px 4px 2px var(--blueLight-shadow);
+}
+
+button[type="submit"] {
+  display: block;
+  background-color: var(--blue);
+  border: none;
+  padding: 1rem 3rem;
+  font-weight: 600;
+  color: var(--white);
+  font-size: inherit;
+  border-radius: 0.8rem;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+button[type="submit"]:hover {
+  background-color: var(--blue-hover);
+  transform: scale(1.01);
+}
+
+.form-group > *:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+h5 {
+  position: absolute;
+  font-size: 1.6rem;
+  left: 2.7rem;
+  top: 1rem;
+  color: var(--gray-dark);
+}
+
+.footnote {
+  position: absolute;
+  bottom: 1rem;
+  left: 6.6rem;
+  font-size: 1.4rem;
+}
+
+.footnote a {
+  color: var(--blueLight);
+}
+
+@keyframes formEntrance {
+  0% {
+    transform: scale(4);
+    opacity: 0;
+  }
+
+  70% {
+    transform: scale(0.95) translate(-50%, -50%);
+    /* opacity: 1; */
+  }
+
+  100% {
+    transform: scale(1) translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+@keyframes cheemsEntrance {
+  0% {
+    transform: translateY(300%);
+    opacity: 0;
+  }
+
+  70% {
+    transform: translateY(-20%) scale(1.02);
+  }
+
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+
+  75% {
+    transform: translateY(-5%);
+  }
+
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
